@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlgoMentor - AI DSA Mentor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+
+<body>
+    <div class="app-container">
+
+        <!-- Header Section -->
+        <header>
+            <div class="status-pill">
+                <span class="dot"></span>
+            </div>
+            <h1>AlgoMentor</h1>
+            <p class="subtitle">Submit your code · Get trained to think better</p>
+
+            <div class="agents-badges">
+                <span class="badge badge-yellow">
+                    <span class="badge-num">1</span> Code Debugger
+                </span>
+                <span class="badge badge-purple">
+                    <span class="badge-num">2</span> Thinking Analyzer
+                </span>
+                <span class="badge badge-pink">
+                    <span class="badge-num">3</span> Socratic Mentor
+                </span>
+            </div>
+        </header>
+
+        <!-- Main Window -->
+        <main class="chat-window">
+
+            <!-- Chat / Header info inside window -->
+            <div class="chat-header">
+                <div class="avatar">AM</div>
+                <div class="avatar-info">
+                    <h2>AlgoMentor</h2>
+                    <span class="online-status"><span class="dot-green"></span> 3 agents online</span>
+                </div>
+            </div>
+
+            <!-- Feed Area (Results will be appended here) -->
+            <div class="feed-area" id="feedArea">
+                <div class="message mentor-message">
+                    Hi GNG Paste your problem, code, and thinking below. I'll help you <em>think</em> through it — not
+                    solve it for you
+                    -No spoilers. Just guidance.
+                </div>
+            </div>
+
+            <!-- Input Area -->
+            <div class="input-area">
+                <form id="submissionForm">
+                    <div class="tabs">
+                        <button type="button" class="tab-btn active" data-target="problem">📄 Problem</button>
+                        <button type="button" class="tab-btn" data-target="code">&lt;&gt; Code</button>
+                        <button type="button" class="tab-btn" data-target="thinking">My thinking</button>
+                    </div>
+
+                    <div class="tab-content">
+                        <div id="problem" class="tab-pane active">
+                            <textarea id="problemText" placeholder="Paste the DSA problem description here..."
+                                required></textarea>
+                        </div>
+                        <div id="code" class="tab-pane">
+                            <textarea id="codeText" placeholder="Paste your code attempt here..." required></textarea>
+                        </div>
+                        <div id="thinking" class="tab-pane">
+                            <textarea id="thinkingText"
+                                placeholder="(Optional) Explain your approach and where you are stuck..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="action-row">
+                        <input type="text" id="userId" placeholder="User ID (e.g. nethr123)" required class="user-input"
+                            value="user_123">
+                        <button type="submit" id="submitBtn">Analyze Code</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
